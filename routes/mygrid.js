@@ -60,12 +60,18 @@ module.exports = (app)=>{
         //abrir a view mygrid_excluir e enviar a json do documento
         res.render('mygrid_alterar.ejs',{dados:procurar})
     })
-    app.get('/alterar_mygrid', async(req,res)=>{
+    //alterar o doc da coleção
+    app.post('/alterar_mygrid', async(req,res)=>{
         //recuperando o id da barra de endereço 
         var id = req.query.id
-        //alterando o documento da coleção
-        var alterar = await modelo.findOneAndUpdate({_id:id})
+        //recuperar as informações digitadas
+        var dados = req.body
+        //alterando o documento da coleção (n tem confirmação, n tem como desfazer o delet)
+        var alterar = await modelo.findOneAndUpdate(
+            {_id:id},
+            {titulo:dados.titulo, texto:dados.texto})
         //voltar para a página mygrid
         res.redirect('/mygrid')
     })
+
 }
