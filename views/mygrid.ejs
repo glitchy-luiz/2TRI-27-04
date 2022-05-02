@@ -14,7 +14,7 @@
                 <input type="text"  data-cke-saved-name="titulo" name="titulo" id="titulo" required><br>
                 <label for="texto">Texto:</label>
                 <textarea name="texto" id="texto" cols="30" rows="10" required></textarea><br>
-                <input type="submit" value="Gravar">
+                <input class="btn btn-secondary" type="submit" value="Gravar">
             </form>
             <h3>Listar Notícias</h3>
             <table class="table table-striped table-hover">
@@ -31,8 +31,8 @@
                         <td>
                             <%=dados[n].texto%>
                         </td>
-                        <td><a  data-cke-saved-href="/mygrid_alterar?id=<%=dados[n]._id%>" href=/mygrid_alterar?id=<%=dados[n]._id%>> Alterar </a>  </td>
-                        <td> <a  data-cke-saved-href="/mygrid_excluir?id=<%=dados[n]._id%>" href=/mygrid_excluir?id=<%=dados[n]._id%>> Excluir </a>  </td>
+                        <td><a class="btn btn-primary btn-sm" data-cke-saved-href="/mygrid_alterar?id=<%=dados[n]._id%>" href=/mygrid_alterar?id=<%=dados[n]._id%>> Alterar </a>  </td>
+                        <td> <a class="btn btn-primary btn-sm" data-cke-saved-href="/mygrid_excluir?id=<%=dados[n]._id%>" href=/mygrid_excluir?id=<%=dados[n]._id%>> Excluir </a>  </td>
                     </tr>
                     <% } %>
             </table>
