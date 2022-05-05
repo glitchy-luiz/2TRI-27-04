@@ -71,9 +71,8 @@ module.exports = (app) => {
                     //gravar o nome do arquivo na collection gallery
                 var arquivo = await gallery.findOneAndUpdate(
                     {_id:req.query.id},
-                    {
-                        arquivo: req.file.filename
-                    })
+                    {arquivo: req.file.filename}
+                    )
                     //apos o upload voltar para o formulario
                 res.redirect('/gallery')
 
